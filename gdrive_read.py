@@ -33,7 +33,8 @@ os.chdir("/home/barbu/Notebooks/Startup/")
 file_list = drive.ListFile({'q': "'<folder ID>' in parents and trashed=false"}).GetList()
 """
 #Folder Computers > Notebooks > Startup
-fileList = drive.ListFile({'q': "'1VH-16kcYSqo7LxBxiIfLJ7nfEBHDxgE6' in parents and trashed=false"}).GetList()
+
+fileList = drive.ListFile({'q': "'13apW5qYwNNX6wMDB803PZ5kmJOjxs48z' in parents and trashed=false"}).GetList()
 for file in fileList:
    # Download all files in folder Notebooks > Startup
   print('Read title: %s, ID: %s' % (file['title'], file['id']))
@@ -41,7 +42,7 @@ for file in fileList:
   isFile = os.path.isfile(file['title']) 
   if isFile:
     file_obj = drive.CreateFile({'id': file['id']})
-    file_obj.GetContentFile('/home/barbu/Notebooks/Startup/' +file['title'], mimetype='text')
+    file_obj.GetContentFile('/home/barbu/Notebooks/StartupGlobal/' +file['title'], mimetype='text')
 
 print ("Program completed !")
 
